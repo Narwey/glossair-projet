@@ -1,18 +1,19 @@
 const Sequelize = require("sequelize");
 const sequelize = require("../db");
+const User = require("./User");
 
 const Domaine = sequelize.define(
   "domaines",
   {
-    // domaine_id: {
-    //   type: Sequelize.INTEGER,
-    //   allowNull: true,
-    //   references: {
-    //     model: Domaine,
-    //     // This is the column name of the referenced model
-    //     key: "id",
-    //   },
-    // },.
+    user_id: {
+      type: Sequelize.INTEGER,
+      allowNull: true,
+      references: {
+        model: User,
+        // This is the column name of the referenced model
+        key: "id",
+      },
+    },
     domaine_id: {
       type: Sequelize.INTEGER,
       allowNull: true,
